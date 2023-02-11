@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO</title>
+    
+</head>
+<body>
+    <input id="text-field" type="text" placeholder="Enter your task">
+    <button id="add">
+        <script>
+            document.querySelector('#add').onclick = function() {
+                if(document.querySelector('#text-field').value.length != 0){
+                    document.querySelector('#tasks').innerHTML += `
+                    <div class="task">
+                        ${document.querySelector('#text-field').value}
+                        <button class="delete">delete</button>
+                    </div>
+                    `;
+    
+                    var current_tasks = document.querySelectorAll(".delete");
+                    for(var i=0; i<current_tasks.length; i++){
+                        current_tasks[i].onclick = function(){
+                            this.parentNode.remove();
+                        }
+                    }
+                }
+            }
+        </script>
+        add
+    </button>
+    <div id="tasks"></div>
+</body>
+</html>
