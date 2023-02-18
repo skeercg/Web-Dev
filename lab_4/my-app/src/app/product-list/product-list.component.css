@@ -1,4 +1,9 @@
-
+img {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
