@@ -6,8 +6,42 @@
         <h3>
           {{ category.type }}
         </h3>
-        <input type="checkbox"></div>
+        <input type="checkbox" [checked]="category.selected" (change)="update(category)"></div>
     </div>
   </div>
-  <app-product-list></app-product-list>
+  <div>
+    <h2>Products</h2>
+
+    <div *ngFor="let product of products">
+
+      <h3>
+        <a
+          [title]="product.name + ' details'"
+          [routerLink]="['/products', product.id]">
+          {{ product.name }}
+        </a>
+      </h3>
+
+      <img src="{{product.image}}">
+
+      <h4>Rating: {{ product.rating }}</h4>
+
+      <p *ngIf="product.description" style="width: 500px;">
+        Description: {{ product.description }}
+      </p>
+
+      <button type="button" (click)="share(product)">
+        Share
+      </button>
+
+      <a href="{{ product.href }}" style="margin: 50px;">Открыть в Kaspi.kz</a>
+
+
+      <app-product-alerts
+        [product]="product"
+        (notify)="onNotify()">
+      </app-product-alerts>
+
+    </div>
+  </div>
 </div>

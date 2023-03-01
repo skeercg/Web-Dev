@@ -16,3 +16,10 @@ input {
 .category-sidebar {
   margin-right: 100px;
 }
+
+img {
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
