@@ -237,7 +237,6 @@ export const products = [
   },
   {
     likes: 0,
-
     id: 19,
     name: 'BAILLR рюкзак',
     price: 8200,

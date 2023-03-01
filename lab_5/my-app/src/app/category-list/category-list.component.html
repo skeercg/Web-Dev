@@ -36,6 +36,7 @@
 
       <a href="{{ product.href }}" style="margin: 50px;">Открыть в Kaspi.kz</a>
 
+      <button type="button" (click)="like(product)">{{product.likes}} Like</button>
 
       <app-product-alerts
         [product]="product"

@@ -29,6 +29,23 @@ export class CategoryListComponent {
     });
   }
 
+  like(product: Product) {
+    let index = this.products.indexOf(product)
+    if (index !== -1) {
+      this.products[index] = {
+        likes: product.likes + 1,
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        rating: product.rating,
+        categoryType: product.categoryType,
+        href: product.href,
+        image: product.image,
+        description: product.description
+      };
+    }
+  }
+
   share(product: Product) {
     window.open(`https://t.me/share/url?url=${product.href}&text=${product.name}`);
   }
