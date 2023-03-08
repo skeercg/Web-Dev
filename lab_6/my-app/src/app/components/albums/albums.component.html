@@ -1,0 +1,19 @@
+<div class="page">
+    <input type="text" [(ngModel)]="newAlbum" placeholder="Enter name of new album"/>
+    <button (click)="addAlbum()">+</button>
+
+
+  <ul *ngIf="loaded">
+    <li *ngFor="let album of albums">
+      <div class="card">
+        <a [routerLink]="['/albums', album.id]">{{album.title}}</a>
+
+        <div>
+          <img (click)="deleteAlbum(album.id)"
+               src="https://cdn-icons-png.flaticon.com/512/3221/3221803.png" width="30">
+        </div>
+      </div>
+    </li>
+  </ul>
+  <p *ngIf="!loaded">Loading albums list...</p>
+</div>
