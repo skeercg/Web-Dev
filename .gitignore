@@ -5,3 +5,5 @@ node_modules
 .vscode
 
 .DS_store
+
+lab_7/venv
